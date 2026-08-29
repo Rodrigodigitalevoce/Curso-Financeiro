@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Fase: Mentalidade Financeira | Treinamento Gratuito</title>
+    <style>
+        :root {
+            --bg-color: #09090b;
+            --card-bg: #121216;
+            --gold-primary: #d4af37;
+            --gold-light: #f3e5ab;
+            --gold-dark: #aa8c2c;
+            --text-main: #f4f4f5;
+            --text-muted: #a1a1aa;
+            --border-color: rgba(212, 175, 55, 0.2);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px 40px 20px;
+            background: linear-gradient(180deg, rgba(18,18,22,0.8) 0%, rgba(9,9,11,1) 100%);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--gold-primary);
+            border: 1px solid var(--border-color);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--text-main);
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+        }
+
+        h1 span {
+            color: var(--gold-primary);
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+        }
+
+        p.subtitle {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto 30px auto;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Seção do Formulário / Brevo */
+        .optin-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .optin-box::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold-dark), var(--gold-primary), var(--gold-light));
+            border-radius: 12px 12px 0 0;
+        }
+
+        .optin-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--gold-light);
+        }
+
+        .optin-box p {
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+
+        /* Seção de Testemunhos */
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: var(--text-main);
+            font-weight: 700;
+        }
+
+        .section-title span {
+            color: var(--gold-primary);
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Proporção 16:9 */
+            height: 0;
+            background: #000;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            border: 0;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        @media (min-width: 768px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .testimonial-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 30px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .testimonial-card .quote {
+            font-style: italic;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .author-info h4 {
+            color: var(--gold-primary);
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+
+        .author-info span {
+            font-size: 0.85rem;
+            color: #71717a;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .direct-link-box {
+            text-align: center;
+            padding: 30px;
+            background: rgba(212, 175, 55, 0.03);
+            border: 1px dashed var(--border-color);
+            border-radius: 10px;
+            margin-top: 40px;
+        }
+
+        .direct-link-box p {
+            margin-bottom: 15px;
+            color: var(--text-muted);
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+            color: #000;
+            font-weight: 700;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid var(--border-color);
+            color: #71717a;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="badge">Nova Fase • Mentalidade Financeira</div>
+        <h1>Assuma o Controle da Sua Realidade e <span>Domine o Jogo dos Investimentos</span></h1>
+        <p class="subtitle">Um treinamento prático e direto ao ponto para desarmar a autossabotagem, ler gráficos com clareza e operar com segurança.</p>
+    </header>
+
+    <div class="container">
+
+        <div class="optin-box" id="cadastro">
+            <h3>Libere Seu Acesso Gratuito Imediato</h3>
+            <p>Insira seu nome e e-mail abaixo para garantir o acesso exclusivo às aulas direto no seu e-mail.</p>
+            
+            <div style="color: var(--text-muted); border: 1px dashed var(--border-color); padding: 20px; border-radius: 6px;">
+                [COLE AQUI O CÓDIGO HTML DO FORMULÁRIO QUE A BREVO TE DEU]
+            </div>
+            </div>
+
+        <h2 class="section-title">Quem já aplicou, <span>comprovou</span></h2>
+
+        <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 10px; padding: 30px; margin-bottom: 40px;">
+            <h3 style="color: var(--gold-light); margin-bottom: 15px; font-size: 1.2rem;">A História do Bruno (Ex-colega de Banco)</h3>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/SEU_VIDEO_ID_AQUI" title="Depoimento Bruno" allowfullscreen></iframe>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 15px;">
+                "Trabalhávamos juntos no banco e aprendi a investir de forma gratuita com ele. Essa orientação mudou completamente minha visão sobre finanças e abriu as portas para uma nova realidade financeira."
+            </p>
+        </div>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div>
+                    <div style="color: var(--gold-primary); font-size: 1.5rem; margin-bottom: 10px;">“</div>
+                    <p class="quote">A mentoria gratuita mudou a minha perspectiva dentro do mercado financeiro. Sair do padrão engessado do banco e entender como investir de verdade foi um divisor de águas.</p>
+                </div>
+                <div class="author-info">
+                    <h4>Bruno</h4>
+                    <span>Ex-colega de Banco / Investidor</span>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div>
+                    <div style="color: var(--gold-primary); font-size: 1.5rem; margin-bottom: 10px;">“</div>
+                    <p class="quote">Aprendi a operar opções e derivativos (Calls & Puts) do zero. A clareza na gestão de risco e na leitura tirou todo o medo de operar e me deu confiança real no mercado de derivativos.</p>
+                </div>
+                <div class="author-info">
+                    <h4>Francisco (Pai do Lucas)</h4>
+                    <span>Aluno de Opções e Derivativos</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="direct-link-box">
+            <p>Prefere ir direto para os vídeos no YouTube sem se cadastrar agora?</p>
+            <a href="https://www.youtube.com/playlist?list=PLG6fP853qdKA" target="_blank" class="btn-gold" style="background: transparent; color: var(--gold-primary); border: 1px solid var(--gold-primary);">Acessar Playlist Direta no YouTube</a>
+        </div>
+
+role    </div>
+
+    <footer>
+        <p>&copy; 2026 • Nova Fase: Mentalidade Financeira. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
